@@ -21,17 +21,17 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
       zIndex: 1000,
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '40px', padding: '0 8px' }}>
-        <div style={{ 
-          width: '32px', 
-          height: '32px', 
-          background: 'var(--primary)', 
+        <div style={{
+          width: '32px',
+          height: '32px',
+          background: 'var(--primary)',
           borderRadius: '8px',
           display: 'grid',
           placeItems: 'center'
         }}>
           <LayoutDashboard size={20} color="white" />
         </div>
-        <h2 style={{ fontSize: '1.25rem', fontWeight: 700 }}>BuscoTrabajo</h2>
+        <h2 style={{ fontSize: '1.25rem', fontWeight: 700 }}>CareerFlow</h2>
       </div>
 
       <nav style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
