@@ -67,6 +67,14 @@ function App() {
     setEditingJob(null);
   };
 
+  const handleDeleteJob = (jobId) => {
+    if (window.confirm('Are you sure you want to delete this job listing?')) {
+      setJobs(jobs.filter(j => j.id !== jobId));
+      setIsModalOpen(false);
+      setEditingJob(null);
+    }
+  };
+
   const openAddModal = (columnId = 'todo') => {
     setEditingJob(null);
     setTargetColumn(columnId);
@@ -175,6 +183,7 @@ function App() {
             setEditingJob(null);
           }}
           onSave={handleSaveJob}
+          onDelete={handleDeleteJob}
           job={editingJob}
         />
       )}
