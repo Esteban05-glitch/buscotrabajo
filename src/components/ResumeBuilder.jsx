@@ -56,7 +56,15 @@ const ResumeBuilder = ({ data, onChange }) => {
 
             {/* Print Styles */}
             <style>{`
+        @page {
+          size: auto;
+          margin: 0mm;
+        }
         @media print {
+          body {
+            margin: 0;
+            background: white !important;
+          }
           body * {
             visibility: hidden;
           }
@@ -68,12 +76,12 @@ const ResumeBuilder = ({ data, onChange }) => {
             left: 0;
             top: 0;
             width: 100%;
-            margin: 0;
-            padding: 0;
           }
           .resume-preview {
             box-shadow: none !important;
-            padding: 0 !important;
+            padding: 15mm !important; /* Proper margin inside the paper */
+            width: 100% !important;
+            min-height: 100vh !important;
           }
         }
       `}</style>
