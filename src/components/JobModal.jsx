@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, Trash2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const JobModal = ({ isOpen, onClose, onSave, job, initialStatus = 'todo' }) => {
+const JobModal = ({ isOpen, onClose, onSave, onDelete, job, initialStatus = 'todo' }) => {
     const [formData, setFormData] = useState({
         title: '',
         company: '',
@@ -206,9 +206,28 @@ const JobModal = ({ isOpen, onClose, onSave, job, initialStatus = 'todo' }) => {
                             </div>
                         </div>
 
-                        <button type="submit" className="btn-primary" style={{ marginTop: '12px', width: '100%', justifyContent: 'center' }}>
-                            {job ? 'Update Job' : 'Add Job Listing'}
-                        </button>
+                        <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+                            {job && (
+                                <button
+                                    type="button"
+                                    onClick={() => onDelete(job.id)}
+                                    className="btn-secondary"
+                                    style={{
+                                        flex: 1,
+                                        justifyContent: 'center',
+                                        color: 'var(--error)',
+                                        borderColor: 'rgba(239, 68, 68, 0.2)',
+                                        background: 'rgba(239, 68, 68, 0.05)'
+                                    }}
+                                >
+                                    <Trash2 size={18} />
+                                    <span>Delete</span>
+                                </button>
+                            )}
+                            <button type="submit" className="btn-primary" style={{ flex: 2, justifyContent: 'center' }}>
+                                {job ? 'Update Job' : 'Add Job Listing'}
+                            </button>
+                        </div>
                     </div>
                 </form>
             </motion.div>
