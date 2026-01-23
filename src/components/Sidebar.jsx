@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutDashboard, Briefcase, FileText, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, Briefcase, FileText, Settings } from 'lucide-react';
 
 const Sidebar = ({ activeTab, setActiveTab }) => {
   const menuItems = [
@@ -67,25 +67,6 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
         ))}
       </nav>
 
-      <div style={{ marginTop: 'auto', paddingTop: '20px', borderTop: '1px solid var(--border-glass)' }}>
-        <button style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          padding: '12px 16px',
-          borderRadius: '12px',
-          border: 'none',
-          background: 'transparent',
-          color: 'var(--text-muted)',
-          cursor: 'pointer',
-          width: '100%',
-          textAlign: 'left',
-          fontSize: '0.9rem'
-        }}>
-          <LogOut size={18} />
-          <span>Exit</span>
-        </button>
-      </div>
     </aside>
   );
 };
